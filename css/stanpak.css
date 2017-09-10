@@ -126,7 +126,8 @@ section {
       visibility: hidden;
     }
     .navbar-expand-lg .navbar-nav{
-          flex-direction: column-reverse;
+          flex-direction: column;
+          text-align: right;
     }
     #mainNav .navbar-nav > li > a{
         font-size: 30px;
@@ -231,9 +232,9 @@ header.masthead {
   background: url("../img/bg-pattern.png"), #7b4397;
   background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
   background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430); */
-  background: url("../img/bg-pattern.png"), #000;
-  background: url("../img/bg-pattern.png");
-  background: url("../img/bg-pattern.png"); 
+  background: url("../img/s7-batman.jpg")no-repeat center right, #000;
+  /*background: url("../img/bg-pattern.png");
+  background: url("../img/bg-pattern.png"); */
 }
   header.masthead .header-content {
     max-width: 500px;
@@ -275,8 +276,8 @@ section.download {
         display: inline-table;
   }
   section.project .img-project .item{
-    width: 20%;
-    height: auto;
+    width: 30%;
+    max-height: 300px;
     display: inline-table;
     overflow: hidden;
     padding: 0;
@@ -410,7 +411,7 @@ section.clients {
   background: url("../img/p-bg.jpg");
 }
 section.clients .item {
-  width: 25%;
+  width: 20%;
   padding:0;
   display: inline-table;
   text-align: center
@@ -556,3 +557,15 @@ footer {
 .btn-xl {
   font-size: 11px;
   padding: 15px 45px; }
+
+section.contact form input,
+section.contact form textarea{
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border:none;
+}
+video.video-js{
+  width: 100%;
+  mix-blend-mode: lighten;
+}

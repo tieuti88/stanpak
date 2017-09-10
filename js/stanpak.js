@@ -41,5 +41,14 @@
       $("#mainNav").removeClass("navbar-shrink");
     }
   });
+  /* WOW Elements */
+  if (typeof WOW == 'function') {
+    new WOW().init();
+  }
+
+  /* Parallax Effects */
+  if (!!$.prototype.enllax) {
+    $(window).enllax();
+  }
 
 })(jQuery); // End of use strict
