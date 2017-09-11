@@ -16,6 +16,25 @@
   });
 
   $(document).ready(function(){
+    $('.carousel-inner').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      arrows: false,
+      cssEase: 'linear',
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive:[
+        {
+          breakpoint: 480,
+          settings: {
+            dots: false
+          }
+        },
+      ]
+    });
+
     $('.navbar-toggle-desktop').click(function(){
       $(this).toggleClass('open');
       $('#navbarResponsive').toggleClass('open');
