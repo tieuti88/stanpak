@@ -117,7 +117,8 @@
 .slick-dotted.slick-slider
 {
     /*margin-bottom: 30px;*/
-    max-height: 550px;
+    /*max-height: 550px;*/
+    height: 100vh;
 }
 
 .slick-dots
@@ -203,4 +204,15 @@
 {
     opacity: .75;
     color: black;
+}
+.slick-slider {
+        padding-top: 0;
+    }
+@media (max-width: 992px){
+    
+}
+@media (max-width: 768px){
+    .slick-slider {
+        padding-top: 71px;
+    }
 }
