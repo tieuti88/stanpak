@@ -40,6 +40,7 @@
       centerPadding: '60px',
       slidesToShow: 3,
       arrows : true,
+      autoplay: false,
       nextArrow : '<div class="slick-next slick-arrow"></div>',
       prevArrow : '<div class="slick-prev slick-arrow"></div>',
       responsive: [
@@ -61,14 +62,34 @@
             slidesToShow: 1
           }
         }
-      ],
-      autoplay: true,
-      autoplaySpeed: 2000,
+      ]
     });
 
     $('.navbar-toggle-desktop').click(function(){
       $(this).toggleClass('open');
       $('#navbarResponsive').toggleClass('open');
+    });
+
+    $('#navbarResponsive').on('click',function(e){
+      if ($('.bg_menu').is(e.target)) return false;  
+      $('.navbar-toggle-desktop').toggleClass('open');
+      $(this).toggleClass('open');
+    });
+
+    var vids = $("video"); 
+    $.each(vids, function(){
+           this.controls = false; 
+    }); 
+
+    $("video").click(function() {
+      //console.log(this); 
+      if (this.paused) {
+        this.play();
+        this.controls = false; 
+      } else {
+        this.pause();
+        this.controls = true; 
+      }
     });
   });
 

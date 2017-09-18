@@ -1,5 +1,12 @@
 <?php
-
+pll_register_string('thiet-ke-in-an', 'THIẾT KẾ & IN ẤN - BAO BÌ');
+pll_register_string('Works', 'Works');
+pll_register_string('Features', 'Features');
+pll_register_string('Services', 'Services');
+pll_register_string('Clients', 'Clients');
+pll_register_string('Blog', 'Blog');
+pll_register_string('Contact', 'Contact');
+pll_register_string('See more', 'See more');
 
 function stanpak_scripts() {
 	// Load our main stylesheet.
@@ -49,7 +56,7 @@ function get_projects(){
 	$args = array(
 		'posts_per_page'   => 6,
 		'offset'           => 0,
-		'category'         => 'project',
+		'category'         => 1,
 		'category_name'    => '',
 		'orderby'          => 'date',
 		'order'            => 'DESC',
@@ -67,5 +74,6 @@ function get_projects(){
 	);
 	return get_posts( $args );
 }
+
 
 ?>

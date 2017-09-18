@@ -1,46 +1,109 @@
-<?php get_header(); ?>
+<!DOCTYPE html>
+<html lang="en">
 
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Stanpak</title>
+    <?php wp_head(); 
+      $id_cat_project = get_cat_ID( 'project' );
+      $id_cat_blog = get_cat_ID( 'blog' );
+          ?>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          <img src="<?=get_template_directory_uri()?>/img/logo.png" > 
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="navbar-toggle-desktop">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <div class="bg_menu">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#project"><?=pll__('Works')?></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#features"><?=pll__('Features')?></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#services"><?=pll__('Services')?></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#clients"><?=pll__('Clients')?></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="<?=get_category_link($id_cat_blog)?>"><?=pll__('Blog')?></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#contact"><?=pll__('Contact')?></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <header class="masthead scrollto clearfix" >
     <!-- Indicators -->
-<?php
-  // print_r(wp_upload_dir('2017/09',true,true));
-?>
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
                 <div class="fill" ><img src="<?=wp_upload_dir('2017/09',true,true)['url']?>/1_1024x550px.jpg"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 1</h2>
+                    <h2><?=pll__('THIẾT KẾ & IN ẤN - BAO BÌ')?> </h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
                 <div class="fill" ><img src="<?=wp_upload_dir('2017/09',true,true)['url']?>/2_1024x550px.jpg"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 2</h2>
+                    <h2><?=pll__('THIẾT KẾ & IN ẤN - BAO BÌ')?> </h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
                 <div class="fill" ><img src="<?=wp_upload_dir('2017/09',true,true)['url']?>/3_1024x550px.jpg"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 3</h2>
+                    <h2><?=pll__('THIẾT KẾ & IN ẤN - BAO BÌ')?> </h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
                 <div class="fill" ><img src="<?=wp_upload_dir('2017/09',true,true)['url']?>/4_1024x550px.jpg"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 4</h2>
+                    <h2><?=pll__('THIẾT KẾ & IN ẤN - BAO BÌ')?> </h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
                 <div class="fill" ><img src="<?=wp_upload_dir('2017/09',true,true)['url']?>/5_1024x550px.jpg"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 5</h2>
+                    <h2><?=pll__('THIẾT KẾ & IN ẤN - BAO BÌ')?> </h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" ><img src="<?=wp_upload_dir('2017/09',true,true)['url']?>/6_1024x550px.jpg"></div>
+                <div class="carousel-caption">
+                    <h2><?=pll__('THIẾT KẾ & IN ẤN - BAO BÌ')?> </h2>
                 </div>
             </div>
         </div>
@@ -49,8 +112,6 @@
 
     <section class="project bg-pattent text-center scrollto" id="project">
         <?php
-          $cat_id = get_category_by_slug('project')->cat_ID;
-          $cat_link = get_category_link($cat_id);
           $ourWork = get_page_by_path('our-work');
          ?>
       <div class="section-heading text-center">
@@ -72,7 +133,7 @@
                   <a href="<?=get_permalink($post->ID,false)?>" class="wow fadeIn" data-featherlight="image" data-wow-delay="0.1s"><div class="item"><img src="<?=get_the_post_thumbnail_url( $post->ID)?>" alt=""><div class="item-info"><h3><?=$post->post_title?></h3><p><?=$desc?></p></div></div></a>
 
                 <?php endforeach ?>
-                <a href="<?=$cat_link?>"  class="btn btn-outline btn-xl js-scroll-trigger">View more</a>
+                <a href="<?=get_category_link($id_cat_project)?>"  class="btn btn-outline btn-xl js-scroll-trigger"><?=pll__('See more')?></a>
             </div>
     </section>
 
@@ -89,7 +150,7 @@
           <div class="col-lg-4 col-xs-12">
             <div class="row avatar">
               <div class="col-sm-6 wow bounceIn" data-wow-delay="0.3s">
-                <img src="<?=get_template_directory_uri()?>/img/truonggiang.jpg">
+                <img src="<?=get_template_directory_uri()?>/img/Trung-uno.jpg">
               </div>
               <div class="col-sm-6 wow bounceIn" data-wow-delay="0.5s">
                 <img src="<?=get_template_directory_uri()?>/img/truonggiang.jpg">
@@ -108,7 +169,7 @@
           <div class="row">
             <div class="col-sm-8 wow fadeInLeft" data-wow-delay="0.1s">
               <div class="section-heading">
-                <h2><?=get_page_by_path('why-stanpak')->post_title?></h2>
+                <h2 style=""><?=get_page_by_path('why-stanpak')->post_title?></h2>
                 <p class="text-muted"><?=get_page_by_path('why-stanpak')->post_content?> </p>
                 <hr>
               </div>
@@ -138,7 +199,7 @@
               </div>
             </div>
             <div class="col-lg-6 col-sm-12 video">
-              <video controls id="video" class="video-js">
+              <video id="video" class="video-js" poster="<?=get_template_directory_uri()?>/img/placeholder.png">
                 <source src="http://stanpak.vn/assets/images/intro-stanpak.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -153,79 +214,12 @@
       <div class="clients-content">
         <div class="container">
             <div class="section-heading">
-              <h2>OUR CLIENTS</h2>
+              <h2><?=get_page_by_path('our-clients')->post_title?></h2>
             </div>
-            <div class="row img-clients">
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-            </div>
-            <div class="row img-clients">
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-            </div>
-            <div class="row img-clients">
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-            </div>
-            <div class="row img-clients">
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-              <div class="item"><img src="/img/client1.png"></div>
-            </div>
+            <?=get_page_by_path('our-clients')->post_content?>
 
         </div>
       </div>
       <div class="overlay"></div>
-    </section>
-
-    <section class="contact bg-pattent" id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <form id="from-contact">
-              <input type="text" name="name" placeholder="Name" required>
-              <input type="email" name="email" placeholder="Email" required>
-              <input type="text" name="subject" placeholder="Subject" required>
-              <textarea required placeholder="Messeage" name="message" rows="6"></textarea>
-            </form>
-          </div>
-          <div class="col-sm-6">
-            <h2>We
-              <i class="fa fa-heart"></i>
-              new friends!</h2>
-            <p>
-              <strong>HOP LONG COMPANY</strong><br/>
-              323 Le Quang Dinh street, 9 ward, Ho Chi Minh city.<br>
-              08 888 345 89<br>
-              cskh@stanpak.vn
-            </p>
-            <ul class="list-inline list-social">
-              <li class="list-inline-item social-twitter">
-                <a href="#">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item social-facebook">
-                <a href="#">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item social-google-plus">
-                <a href="#">
-                  <i class="fa fa-google-plus"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-      </div>
     </section>
 <?php get_footer(); ?>
